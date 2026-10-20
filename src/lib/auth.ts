@@ -41,3 +41,8 @@ export async function requireAuthenticatedUser(): Promise<CurrentUser> {
   if (!user) redirect("/login");
   return user;
 }
+export async function requireRole(allowed: Role[]): Promise<CurrentUser> {
+  const user = await requireAuthenticatedUser();
+  if (!allowed.includes(user.role)) redirect("/dashboard");
+  return user;
+}

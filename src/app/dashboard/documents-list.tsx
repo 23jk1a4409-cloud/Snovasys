@@ -62,10 +62,15 @@ export default async function DocumentsList({ user }: { user: CurrentUser }) {
               <td className="p-2">{d.permission}</td>
               <td className="p-2">{Math.ceil(d.size_bytes / 1024)} KB</td>
               <td className="p-2">{new Date(d.created_at).toISOString().slice(0, 10)}</td>
-              <td className="p-2">
+                           <td className="p-2 space-x-3">
                 <a className="text-blue-700 underline" href={`/api/documents/${d.id}/download`}>
                   Download
                 </a>
+                {d.permission === "owner" && (
+                  <a className="text-blue-700 underline" href={`/documents/${d.id}/share`}>
+                    Share
+                  </a>
+                )}
               </td>
             </tr>
           ))}

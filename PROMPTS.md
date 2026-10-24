@@ -12,7 +12,7 @@ AI tool used: Claude (chat). I log what I asked, what it produced, what was wron
 3. **The defect:** The AI assumed the server role (service_role) would keep default access to the tables. It did not on my project. Login succeeded but the dashboard sent me back to the login page, with no error on screen.
 4. **How I checked:** The audit log showed auth.login success rows, so the password was correct. I added a temporary console line in src/lib/auth.ts that printed the real Supabase error. It said: permission denied for table profiles.
 5. **What I changed:** Added migration 0003_service_role_grants.sql, which grants select, insert, update and delete on the three tables to service_role only. The browser roles stay fully revoked. I then removed the temporary debug lines.
-6. **Commit:** af47bee
+6. **Commit:** 9ed0b84
 
 Verified by signing in as the owner and seeing the dashboard show role owner.
 

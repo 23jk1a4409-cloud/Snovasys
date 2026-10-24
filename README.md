@@ -17,9 +17,9 @@ Next.js (TypeScript), Supabase Auth, PostgreSQL, Supabase private Storage, Vites
 
 | Role | Email | Password |
 |---|---|---|
-| Owner | owner@trustvault.test | (fill in) |
-| Viewer | viewer@trustvault.test | (fill in) |
-| Admin | admin@trustvault.test | (fill in) |
+| Owner | owner@trustvault.test | (gangabhavani)|
+| Viewer | viewer@trustvault.test | (sudhadurga) |
+| Admin | admin@trustvault.test | (23jk1a4409) |
 
 Public sign-up is disabled. Accounts are created by hand in Supabase.
 
